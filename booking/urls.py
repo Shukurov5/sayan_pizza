@@ -7,5 +7,5 @@ router = DefaultRouter()
 router.register(r'bookings', TableBookingViewSet)
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),  # 🔹 убрали лишний 'api/'
 ]
