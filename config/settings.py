@@ -39,16 +39,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django_filters',
+    'rest_framework',
+    'drf_spectacular',
+    'rest_framework_simplejwt',
+
     'users',
     'menu',
     'content',
     'cart',
     'booking',
-
-    'django_filters',
-    'rest_framework',
-    'drf_spectacular',
-    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -84,13 +84,23 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'sayan_pizza_db',
+        'USER': 'batyrbek',
+        'PASSWORD': 'f3tko0128',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -140,3 +150,5 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
+
+
